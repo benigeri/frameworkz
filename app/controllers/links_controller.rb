@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = Link.new(:title => 'test', :url => 'testurl')
+    @link = Link.new
   end
 
   def create
