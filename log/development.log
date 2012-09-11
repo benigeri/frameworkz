@@ -3719,3 +3719,1338 @@ Served asset /pages.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:30:57 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:48:44 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (35.5ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `will_paginate' for #<#<Class:0x007f8ead8bad88>:0x007f8eaec95920>):
+    7:   <% end %>
+    8: </ul>
+    9: 
+    10: <%= will_paginate @links %>
+  app/views/pages/index.html.erb:10:in `_app_views_pages_index_html_erb___2212502885920900929_70125397255080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:49:24 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `will_paginate' for #<#<Class:0x007f8ead8bad88>:0x007f8eadea82e0>):
+    7:   <% end %>
+    8: </ul>
+    9: 
+    10: # <%= will_paginate @links %>
+  app/views/pages/index.html.erb:10:in `_app_views_pages_index_html_erb___2212502885920900929_70125389950940'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:49:28 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:51:56 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC
+Completed 500 Internal Server Error in 11ms
+
+NoMethodError (undefined method `page' for #<ActiveRecord::Relation:0x007f8eaebaf3f8>):
+  app/controllers/pages_controller.rb:6:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 25 OFFSET 0[0m
+  Rendered pages/index.html.erb within layouts/application (12.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /pages.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:14 -0700
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:52:25 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 72ms (Views: 67.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:31 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:48 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (14.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:52:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=3" for 127.0.0.1 at 2012-09-10 19:53:01 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"3"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 3[0m
+  Rendered pages/index.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (comparison of Fixnum with String failed):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li><%= link_to link.title, link.url %></li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__1182705711436768650_70272706150320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+
+
+Started GET "/pages?page=3&per_page=3" for 127.0.0.1 at 2012-09-10 19:53:19 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 6
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (comparison of Fixnum with String failed):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li><%= link_to link.title, link.url %></li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__1182705711436768650_70272706150320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/pages?page=2&per_page=3" for 127.0.0.1 at 2012-09-10 19:53:21 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"3"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 3[0m
+  Rendered pages/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (comparison of Fixnum with String failed):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li><%= link_to link.title, link.url %></li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__1182705711436768650_70272706150320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+
+
+Started GET "/?per_page=1&page=1" for 127.0.0.1 at 2012-09-10 19:53:32 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"per_page"=>"1", "page"=>"1"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 1 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (comparison of Fixnum with String failed):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li><%= link_to link.title, link.url %></li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__1182705711436768650_70272706150320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:54:36 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=3" for 127.0.0.1 at 2012-09-10 19:54:39 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"3"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 3 OFFSET 3
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (comparison of Fixnum with String failed):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li><%= link_to link.title, link.url %></li>
+    7:   <% end %>
+    8: </ul>
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__1182705711436768650_70272706150320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 30 OFFSET 0[0m
+  Rendered pages/index.html.erb within layouts/application (7.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 3 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (29.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" LIMIT 3 OFFSET 3
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:17 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 3 OFFSET 6[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:19 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:27 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"3"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" LIMIT 5 OFFSET 10
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 48ms (Views: 43.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:28 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:29 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" LIMIT 5 OFFSET 5
+  Rendered pages/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:31 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:34 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 19:59:42 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 30 OFFSET 0[0m
+  Rendered pages/index.html.erb within layouts/application (7.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 19:59:43 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" LIMIT 30 OFFSET 0[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (10.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 20:00:35 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" LIMIT 30 OFFSET 0
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  Rendered pages/index.html.erb within layouts/application (3.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:04:54 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (10.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:05:47 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:05 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=3" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"3"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 30 OFFSET 0
+  Rendered pages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:20 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (10.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=2" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"2"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:56 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=2" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"2"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 4
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:57 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=4&per_page=2" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"4", "per_page"=>"2"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 6[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=5&per_page=2" for 127.0.0.1 at 2012-09-10 21:06:58 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"5", "per_page"=>"2"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 8
+  Rendered pages/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:06:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"2"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:00 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"2"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"2"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 4
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=4&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"4", "per_page"=>"2"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 6[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:16 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=5&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"5", "per_page"=>"2"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 8
+  Rendered pages/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=4&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"4", "per_page"=>"2"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 6
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 24ms (Views: 9.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:19 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=4&per_page=2" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"4", "per_page"=>"2"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 2 OFFSET 6[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:49 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY created_at DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-10 21:07:56 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
