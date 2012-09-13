@@ -5668,3 +5668,54 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-11 01:26:10 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/1" for 127.0.0.1 at 2012-09-11 01:32:52 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Link with id=1):
+  app/controllers/links_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/links/15" for 127.0.0.1 at 2012-09-11 01:32:59 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 15[0m
+  Rendered links/show.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-11 01:33:00 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
