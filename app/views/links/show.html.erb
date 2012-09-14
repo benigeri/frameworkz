@@ -1,5 +1,14 @@
 <h2>Show Link View</h2>
 
+<h3 class="title">
+  <%= link_to @link.title, @link.url %>
+</h3>
+
+<div class="votes">
+  Votes: <%= @link.voteCount %>
+</div>
+
+
 <div class="comments">
   <% @link.comments.each do |comment| %>
     <p><%= comment.message %></p>

@@ -11003,3 +11003,1601 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:32 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=5" for 127.0.0.1 at 2012-09-13 23:24:35 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"5"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'
+  Rendered pages/index.html.erb within layouts/application (71.2ms)
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:24:35 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:24:35 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:24:37 -0700
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  Rendered links/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:24:37 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:24:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:24:46 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"New link see if redirect to show", "url"=>"show?"}, "commit"=>"Create Link"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Sep 2012 06:24:46 UTC +00:00], ["title", "New link see if redirect to show"], ["updated_at", Fri, 14 Sep 2012 06:24:46 UTC +00:00], ["url", "show?"], ["user_id", nil], ["voteCount", 0]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 21
+  Rendered links/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    6:   <% end %>
+    7: </div>
+    8: 
+    9: <%= form_for(@comment) do |f| %>
+    10:   <% if @comment.errors.any? %>
+    11:     <div id="error_explanation">
+    12:       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+  app/views/links/show.html.erb:9:in `_app_views_links_show_html_erb___4262135287004041630_70353302428220'
+  app/controllers/links_controller.rb:19:in `block (2 levels) in create'
+  app/controllers/links_controller.rb:17:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:25:14 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"New link see if redirect to show", "url"=>"show?"}, "commit"=>"Create Link"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:25:14 UTC +00:00], ["title", "New link see if redirect to show"], ["updated_at", Fri, 14 Sep 2012 06:25:14 UTC +00:00], ["url", "show?"], ["user_id", nil], ["voteCount", 0]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered links/create.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 64ms (Views: 3.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:25:14 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:25:14 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:26:38 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+        format.html { render :action => "create", redirect_to :back }
+                                                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__1597240499684332177__call__2652841244708264092__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:143:in `pass'
+  rack-cache (1.2) lib/rack/cache/context.rb:155:in `invalidate'
+  rack-cache (1.2) lib/rack/cache/context.rb:71:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:30:19 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 98ms (Views: 86.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:30:19 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:30:19 -0700
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:30:22 -0700
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered links/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:30:22 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:30:22 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:30:26 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"asdf", "url"=>"asdf"}, "commit"=>"Create Link"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:30:26 UTC +00:00], ["title", "asdf"], ["updated_at", Fri, 14 Sep 2012 06:30:26 UTC +00:00], ["url", "asdf"], ["user_id", nil], ["voteCount", 0]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered links/create.html.erb within layouts/application (0.3ms)
+Redirected to 
+Completed 500 Internal Server Error in 10ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/links_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:33:06 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"New link see if redirect to show", "url"=>"show?"}, "commit"=>"Create Link"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:33:06 UTC +00:00], ["title", "New link see if redirect to show"], ["updated_at", Fri, 14 Sep 2012 06:33:06 UTC +00:00], ["url", "show?"], ["user_id", nil], ["voteCount", 0]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/24
+Completed 302 Found in 65ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/links/24" for 127.0.0.1 at 2012-09-13 23:33:06 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 24
+  Rendered links/show.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:33:06 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:33:06 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:33:13 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"New link see if redirect to show", "url"=>"show?"}, "commit"=>"Create Link"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Sep 2012 06:33:13 UTC +00:00], ["title", "New link see if redirect to show"], ["updated_at", Fri, 14 Sep 2012 06:33:13 UTC +00:00], ["url", "show?"], ["user_id", nil], ["voteCount", 0]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links/25
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/links/25" for 127.0.0.1 at 2012-09-13 23:33:13 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "25"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 25[0m
+  Rendered links/show.html.erb within layouts/application (18.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:33:13 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:33:13 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:33:30 -0700
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  Rendered links/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:33:30 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:33:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:33:40 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "link"=>{"title"=>"This is the test 435", "url"=>"test453"}, "commit"=>"Create Link"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 14 Sep 2012 06:33:40 UTC +00:00], ["title", "This is the test 435"], ["updated_at", Fri, 14 Sep 2012 06:33:40 UTC +00:00], ["url", "test453"], ["user_id", nil], ["voteCount", 0]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links/26
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:33:40 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "26"]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26[0m
+  Rendered links/show.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:33:40 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:33:40 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:34:03 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "26"]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26
+  Rendered links/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:34:03 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:34:03 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:34:05 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "26"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26[0m
+  Rendered links/show.html.erb within layouts/application (18.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:34:05 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:34:05 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2012-09-13 23:34:08 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "comment"=>{"message"=>"adf\r\n", "link_id"=>"26"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("created_at", "link_id", "message", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:34:08 UTC +00:00], ["link_id", 26], ["message", "adf\r\n"], ["updated_at", Fri, 14 Sep 2012 06:34:08 UTC +00:00], ["user_id", 3]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/26
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:34:08 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "26"]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26
+  Rendered links/show.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:34:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:34:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:36:08 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "26"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26[0m
+  Rendered links/show.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:36:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:36:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/test453" for 127.0.0.1 at 2012-09-13 23:36:10 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"test453"}
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "test453"]]
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Link with id=test453):
+  app/controllers/links_controller.rb:5:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.5ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:36:36 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "26"]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 26[0m
+  Rendered links/show.html.erb within layouts/application (4.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:36:37 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:36:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-09-13 23:38:40 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 47ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:38:40 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `votes' for nil:NilClass):
+    6:     <li>
+    7:       <%= link_to link.title, link.url %><br />
+    8:       <%= link_to "Comments", link %><br />
+    9:       <% if current_user.votes.where(:link_id => link.id, :up => true).present? %>
+    10:         *
+    11:       <% else %>
+    12:         <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true }), :method => :post %>
+  app/views/pages/index.html.erb:9:in `block in _app_views_pages_index_html_erb__563841133881890327_70341828248420'
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__563841133881890327_70341828248420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:38:47 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  Rendered pages/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `votes' for nil:NilClass):
+    6:     <li>
+    7:       <%= link_to link.title, link.url %><br />
+    8:       <%= link_to "Comments", link %><br />
+    9:       <% if current_user.votes.where(:link_id => link.id, :up => true).present? %>
+    10:         *
+    11:       <% else %>
+    12:         <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true }), :method => :post %>
+  app/views/pages/index.html.erb:9:in `block in _app_views_pages_index_html_erb__563841133881890327_70341828248420'
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__563841133881890327_70341828248420'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:39:29 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notce => "Link was successf...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.2ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:39:35 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notce => "Link was successf...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:39:45 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notice => "Link was success...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/links/26" for 127.0.0.1 at 2012-09-13 23:40:07 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notice => 'Link was success...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+
+
+Started GET "/links/25" for 127.0.0.1 at 2012-09-13 23:40:19 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notice => 'Link was success...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/links/25" for 127.0.0.1 at 2012-09-13 23:40:21 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ',', expecting '}'
+...rmat.html { redirect_to(@link), :notice => 'Link was success...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/links/25" for 127.0.0.1 at 2012-09-13 23:40:35 -0700
+
+SyntaxError (/Users/benigeri/Sites/frameworkz/app/controllers/links_controller.rb:19: syntax error, unexpected ':', expecting '}'
+...mat.html { redirect_to(@link) :notice => 'Link was successfu...
+...                               ^):
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.7) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.7) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+
+
+Started GET "/links/25" for 127.0.0.1 at 2012-09-13 23:40:58 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mLink Load (0.1ms)[0m  SELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1  [["id", "25"]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 25[0m
+  Rendered links/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:40:59 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:40:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-13 23:41:02 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 48ms (Views: 32.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:02 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:02 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-13 23:41:10 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "user"=>{"email"=>"me@benigeri", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'me@benigeri' LIMIT 1
+Completed 401 Unauthorized in 4ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "user"=>{"email"=>"me@benigeri", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 99ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-13 23:41:15 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "user"=>{"email"=>"me@benigeri", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'me@benigeri' LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "user"=>{"email"=>"me@benigeri", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 98ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:15 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-09-13 23:41:21 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "user"=>{"email"=>"me@benigeri.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'me@benigeri.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-09-14 00:08:20.849045', "current_sign_in_at" = '2012-09-14 06:41:21.565829', "sign_in_count" = 6, "updated_at" = '2012-09-14 06:41:21.567026' WHERE "users"."id" = 3
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 99ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:41:21 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'
+  Rendered pages/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:21 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:21 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:41:45 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:45 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:46 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:41:48 -0700
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered links/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:48 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:48 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:41:51 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "link"=>{"title"=>"asdf", "url"=>"asf"}, "commit"=>"Create Link"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:41:51 UTC +00:00], ["title", "asdf"], ["updated_at", Fri, 14 Sep 2012 06:41:51 UTC +00:00], ["url", "asf"], ["user_id", nil], ["voteCount", 0]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/new
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:41:51 -0700
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  Rendered links/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:41:51 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:41:51 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2012-09-13 23:42:23 -0700
+Processing by LinksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered links/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:42:23 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:42:23 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/links" for 127.0.0.1 at 2012-09-13 23:42:27 -0700
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo=", "link"=>{"title"=>"asdf", "url"=>"asdf"}, "commit"=>"Create Link"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "links" ("created_at", "title", "updated_at", "url", "user_id", "voteCount") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 14 Sep 2012 06:42:27 UTC +00:00], ["title", "asdf"], ["updated_at", Fri, 14 Sep 2012 06:42:27 UTC +00:00], ["url", "asdf"], ["user_id", nil], ["voteCount", 0]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/links/28
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/links/28" for 127.0.0.1 at 2012-09-13 23:42:27 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = ? LIMIT 1[0m  [["id", "28"]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."link_id" = 28
+  Rendered links/show.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Completed 200 OK in 19ms (Views: 7.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:42:27 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:42:27 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/links" for 127.0.0.1 at 2012-09-13 23:42:35 -0700
+
+AbstractController::ActionNotFound (The action 'index' could not be found for LinksController):
+  actionpack (3.2.7) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.7) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.7) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.7) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.7) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.7) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.7) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `_run__87695969041232042__call__514708666785978753__callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.7) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.7) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.7) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.7) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-13 23:42:39 -0700
+Processing by PagesController#index as HTML
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'
+  Rendered pages/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:42:39 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:42:39 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 00:12:37 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:12:37 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:12:37 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-09-14 00:12:39 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cYIZc4yhXFZAnVmA5+KqRp7Ij7dVNyfZK+mUHrZhPqo="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 00:12:39 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:12:39 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:12:39 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/votes?vote%5Blink_id%5D=13&vote%5Bup%5D=true" for 127.0.0.1 at 2012-09-14 00:12:42 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"authenticity_token"=>"3GDujjl91IxS+8FV6MLIxwB3e2JPfpvPGL9T5k8glWE=", "vote"=>{"link_id"=>"13", "up"=>"true"}}
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-14 00:12:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:12:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:12:42 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-14 00:13:54 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:13:55 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:13:55 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-09-14 00:14:06 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.2/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:14:06 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:14:06 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 00:14:07 -0700
+Processing by PagesController#index as HTML
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  Rendered pages/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-14 00:14:07 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-14 00:14:07 -0700
+Served asset /application.js - 304 Not Modified (0ms)
