@@ -16,7 +16,7 @@
       <% else %>
         <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false }), :method => :post %>
       <% end %> <br />
-      Votes: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
+      Votes: <%= link.voteCount %>
     </li>
 
   <% end %>

@@ -12,6 +12,8 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(params[:link])
+    @link.voteCount = 0
+
     respond_to do |format|
       if @link.save
         format.html { render :action => "create" }
