@@ -10791,3 +10791,215 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:16:51 -0700
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=2&per_page=5" for 127.0.0.1 at 2012-09-13 23:22:56 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"5"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY count LIMIT 5 OFFSET 5
+SQLite3::SQLException: no such column: count: SELECT  "links".* FROM "links"  ORDER BY count LIMIT 5 OFFSET 5
+  Rendered pages/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: count: SELECT  "links".* FROM "links"  ORDER BY count LIMIT 5 OFFSET 5):
+    2: <%= link_to "Add a link", new_link_path %>
+    3: 
+    4: <ul>
+    5:   <% @links.each do |link| %>
+    6:     <li>
+    7:       <%= link_to link.title, link.url %><br />
+    8:       <%= link_to "Comments", link %><br />
+  app/views/pages/index.html.erb:5:in `_app_views_pages_index_html_erb__2537957493770824480_70353303993400'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.3ms)
+
+
+Started GET "/pages?page=2&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:09 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"2", "per_page"=>"5"}
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount LIMIT 5 OFFSET 5[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 10 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 10 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 11 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 11 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 12 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 12 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 16 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 16 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 17 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 17 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (56.9ms)
+Completed 200 OK in 98ms (Views: 72.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:13 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"5"}
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 14 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 14 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 9 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 9 AND "votes"."up" = 'f'
+  Rendered pages/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:13 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:13 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:16 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"5"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount LIMIT 5 OFFSET 10[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 18 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 18 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 19 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 19 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 20 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 20 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:16 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:16 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=3&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:24 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"3", "per_page"=>"5"}
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 10
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "links" [0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 17 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 17 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 18 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 18 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 19 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 19 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 20 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 20 AND "votes"."up" = 'f'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 14 AND "votes"."up" = 't'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 14 AND "votes"."up" = 'f'
+  Rendered pages/index.html.erb within layouts/application (72.8ms)
+Completed 200 OK in 84ms (Views: 73.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:24 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:24 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pages?page=1&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:29 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"5"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:29 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:29 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/votes?vote%5Blink_id%5D=6&vote%5Bup%5D=true" for 127.0.0.1 at 2012-09-13 23:23:32 -0700
+Processing by VotesController#create as HTML
+  Parameters: {"authenticity_token"=>"g+nAHARZioUXtoFtReRyqBXwZg7Q0MNyyttV96qLdkU=", "vote"=>{"link_id"=>"6", "up"=>"true"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mVote Load (0.1ms)[0m  [1mSELECT "votes".* FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mVote Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 3 AND "votes"."link_id" = 6) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "votes" ("created_at", "link_id", "up", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 14 Sep 2012 06:23:32 UTC +00:00], ["link_id", 6], ["up", true], ["updated_at", Fri, 14 Sep 2012 06:23:32 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mVote Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "votes" WHERE ("votes"."user_id" = 3 AND "votes"."id" != 24 AND "votes"."link_id" = 6) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links" WHERE "links"."id" = 6 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "links" SET "voteCount" = 1, "updated_at" = '2012-09-14 06:23:32.790737' WHERE "links"."id" = 6[0m
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/pages?page=1&per_page=5
+Completed 302 Found in 39ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/pages?page=1&per_page=5" for 127.0.0.1 at 2012-09-13 23:23:32 -0700
+Processing by PagesController#index as HTML
+  Parameters: {"page"=>"1", "per_page"=>"5"}
+  [1m[36mLink Load (0.3ms)[0m  [1mSELECT "links".* FROM "links" ORDER BY voteCount DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "links" 
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 6 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 13 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 15 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 7 AND "votes"."up" = 'f'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 't'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."user_id" = 3 AND "votes"."link_id" = 8 AND "votes"."up" = 'f'[0m
+  Rendered pages/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2012-09-13 23:23:32 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2012-09-13 23:23:32 -0700
+Served asset /application.js - 304 Not Modified (0ms)
