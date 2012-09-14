@@ -3,4 +3,5 @@ class Link < ActiveRecord::Base
   belongs_to :user
    # validates :name, :uniqueness => true
   has_many :comments
+  has_many :votes
 end
